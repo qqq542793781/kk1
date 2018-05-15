@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery带水平拖动条图片相册</title>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<div id="zsgun">
+	<a href="#" class="prenext zspre"></a>
+	<a href="#" class="prenext zsnext"></a>
+	<div id="gundiv" class="container2">
+		<ul>
+			<li>
+				<a href="http://www.17sucai.com"><img src="images/img01.jpg" alt="站长素材网页特效" width="153" height="153"/></a>
+				<p><a href="http://www.17sucai.com">潮流单品</a></p>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com"><img src="images/img02.jpg" alt="" width="153" height="153"/></a>
+				<p><a href="http://www.17sucai.com">网页特效</a></p>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com"><img src="images/img03.jpg" alt="" width="153" height="153"/></a>
+				<p><a href="http://www.17sucai.com">时尚摄影</a></p>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com"><img src="images/img04.jpg" alt="站长素材网页特效" width="153" height="153"/></a>
+				<p><a href="http://www.17sucai.com">英伦风</a></p>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com"><img src="images/img05.jpg" alt="" width="153" height="153"/></a>
+				<p><a href="http://www.17sucai.com">素装运动派</a></p>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com"><img src="images/img01.jpg" alt="站长素材网页特效" width="153" height="153"/></a>
+				<p><a href="http://www.17sucai.com">潮流单品</a></p>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com"><img src="images/img02.jpg" alt="" width="153" height="153"/></a>
+				<p><a href="http://www.17sucai.com">网页特效</a></p>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com"><img src="images/img03.jpg" alt="" width="153" height="153"/></a>
+				<p><a href="http://www.17sucai.com">时尚摄影</a></p>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com"><img src="images/img04.jpg" alt="站长素材网页特效" width="153" height="153"/></a>
+				<p><a href="http://www.17sucai.com">英伦风</a></p>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com"><img src="images/img05.jpg" alt="" width="153" height="153"/></a>
+				<p><a href="http://www.17sucai.com">素装运动派</a></p>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/hScrollPane.js"></script>
+<script type="text/javascript">
+$(function(){
+	var glen = $("#gundiv ul li").length;
+	$("#gundiv ul").css("width",172 * (glen));
+	$("#gundiv li").hover(function(){
+		$("#gundiv li").removeClass("zslion");
+		$(this).addClass("zslion");
+	},function(){
+		$(this).removeClass("zslion");
+	})
+});
+
+$("#zsgun").hScrollPane({
+	mover:"ul",
+	moverW:function(){return $("#zsgun li").length*172-17;}(),
+	showArrow:true,
+	handleCssAlter:"draghandlealter"
+});
+</script>
+
+</body>
+</html>

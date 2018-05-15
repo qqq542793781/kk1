@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery color插件鼠标悬停文字背景彩色渐变动画导航条</title>
+<meta name="description" content="jquery color animations彩色动画插件制作鼠标悬停文字背景彩色渐变动画过渡效果，背景悬停彩色渐变动画过渡效果两种文字/背景悬停彩色渐变动画导航条效果。" />
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+.demo{margin:20px auto;width:800px;padding:10px;background:#8B8B8B;}
+.demo h2{padding:2px 0px;font:25px, Georgia;color:#fff;margin-left:100px;}
+/* menu */
+#menu{margin:20px auto;width:600px;height:40px;}
+#menu ul li{float:left;padding-left:10px;}
+.first a{font-family:"微软雅黑","宋体";font-size:18px;color:#fff;text-decoration:none;background:#303030;padding:5px;float:left;display:block;}
+.second a{font-family:"微软雅黑","宋体";font-size:18px;color:#fff;text-decoration:none;background:#303030;padding:5px;float:left;display:block;}
+.third a{font-family:"微软雅黑","宋体";font-size:18px;color:#fff;text-decoration:none;background:#cc0022;padding:5px;float:left;display:block;}
+.fourth a{font-family:"微软雅黑","宋体";font-size:18px;color:#fff;text-decoration:none;background:#cc0022;padding:5px;float:left;display:block;}
+</style>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.color.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	// first demo
+	$(".first a").hover(function(){
+		$(this).animate({
+			backgroundColor:"#00aadd"
+		}, 600);
+	},function(){
+		 $(this).animate({
+		 	backgroundColor:"#303030"
+		},400);
+	});
+
+	// second demo
+	$(".second a").hover(function(){
+		$(this).animate({
+			color:"#00eeff"
+		},400);
+	},function(){
+		$(this).animate({
+			color:"#FFFFFF"
+		},500);
+	});
+	
+	// third demo
+	original = $('.third a').css('background-color');
+	$('.third a').hover(function(){
+		var col = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+		$(this).animate({
+			'backgroundColor':col
+		}, 1000);
+	},function(){
+		$(this).animate({
+			'backgroundColor':original
+		},500);
+	});
+
+	// fourth demo
+	$('.fourth a').hover(function(){
+		var col = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+		$(this).animate({
+			'backgroundColor': col
+		},500);
+	},function(){
+		var col = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')'; 
+		$(this).animate({
+			'backgroundColor': col
+		},500);
+	});
+	
+});
+</script>
+</head>
+<body>
+
+	<div class="demo">
+	
+		<h2>jquery背景颜色的动画</h2>
+		<div id="menu" class="first">
+			<ul>
+				<li><a href="http://www.17sucai.com/">网站首页</a></li>
+				<li><a href="http://www.17sucai.com/">关于我们</a></li>
+				<li><a href="http://www.17sucai.com/">项目案例</a></li>
+				<li><a href="http://www.17sucai.com/">联系我们</a></li>
+			</ul>
+		</div>
+		
+		
+		<h2>jquery的字体颜色动画</h2>
+		<div id="menu" class="second">
+			<ul>
+				<li><a href="http://www.17sucai.com/">网站首页</a></li>
+				<li><a href="http://www.17sucai.com/">关于我们</a></li>
+				<li><a href="http://www.17sucai.com/">项目案例</a></li>
+				<li><a href="http://www.17sucai.com/">联系我们</a></li>
+			</ul>
+		</div>
+		
+	
+		<h2>jQuery每个时间不同的充鼠标悬停颜色</h2>
+		<div id="menu" class="third">
+			<ul>
+				<li><a href="http://www.17sucai.com/">网站首页</a></li>
+				<li><a href="http://www.17sucai.com/">关于我们</a></li>
+				<li><a href="http://www.17sucai.com/">项目案例</a></li>
+				<li><a href="http://www.17sucai.com/">联系我们</a></li>
+			</ul>
+		</div>
+		
+	
+		<h2>jQuery鼠标悬停颜色</h2>
+		<div id="menu" class="fourth">
+			<ul>
+				<li><a href="http://www.17sucai.com/">网站首页</a></li>
+				<li><a href="http://www.17sucai.com/">关于我们</a></li>
+				<li><a href="http://www.17sucai.com/">项目案例</a></li>
+				<li><a href="http://www.17sucai.com/">联系我们</a></li>
+			</ul>
+		</div>
+	
+	</div><!--wrapper-->
+	
+</body>
+</html>
